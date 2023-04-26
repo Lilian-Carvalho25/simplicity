@@ -2,12 +2,21 @@
 // formulario foi usado ao invés de "document", para que o elemento seja procurado a partir do formulário, e não do documento inteiro, atráves do DOM. Isso ajuda muito na performance do site.
 const formulario = document.querySelector("form");
 const campoCep = formulario.querySelector("#cep");
+const campoTelefone = formulario.querySelector("#telefone");
+const campoCelular = formulario.querySelector("#celular");
 const campoEndereco = formulario.querySelector("#endereco");
 const campoBairro = formulario.querySelector("#bairro");
 const campoCidade = formulario.querySelector("#cidade");
 const campoEstado = formulario.querySelector("#estado");
-const status = formulario.querySelector("#status");
+const mensagem = formulario.querySelector("#status");
 const botaoLocalizar = formulario.querySelector("#localizar-cep");
+
+/* Ativação das máscaras com jQuery Mask */
+
+$(campoCep).mask("00000-000");
+$(campoTelefone).mask("(00) 0000-0000");
+$(campoCelular).mask("(00) 0000-00000");
+
 
 /* Monitorando o evento de acionamento do botão localizar cep */
 botaoLocalizar.addEventListener("click", function(event){
@@ -34,15 +43,17 @@ botaoLocalizar.addEventListener("click", function(event){
 
         // Se existir "erro" no objeto dados
         if("erro" in dados){
-            console.log("CEP não encontrado!");
+            mensagem.innerHTML = "CEP não encontrado!";
+            mensagem.style.color = "red";
+            mensagem.focus();
         } else { // Senão
-            console.log("CEP encontrado!");
+            mensagem.innerHTML = "CEP encontrado!";
+            mensagem.style.color = "blue";
             
-
             campoEndereco.value = dados.logradouro;
             campoBairro.value = dados.bairro;
             campoCidade.value = dados.localidade;
-            campoEstado.vale = dados.uf;
+            campoEstado.value = dados.uf;
         }
     })
 })
