@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - Simplicity</title>
+    <!-- Importando o CSS do plugin lightbox -->
+    <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -37,10 +39,13 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas a quis rem, eveniet harum quos labore obcaecati nulla officiis sunt et maiores illo explicabo voluptatum?</p>
 
         <figure>
-            <img src="imagens/desenvolvimento-web-mini.jpg" alt="">
-            <img src="imagens/design-grafico-mini.jpg" alt="">
-            <img src="imagens/marketing-digital-mini.jpg" alt="">
-            <img src="imagens/consultoria-treinamento-mini.jpg" alt="">
+            <a href="imagens/desenvolvimento-web.jpg" data-lightbox="galeria" data-title="Desenvolvimento web"><img src="imagens/desenvolvimento-web-mini.jpg" alt=""></a>
+
+            <a href="imagens/design-grafico.jpg" data-lightbox="galeria" data-title="Design gráfico"><img src="imagens/design-grafico-mini.jpg" alt=""></a>
+
+            <a href="imagens/marketing-digital.jpg" data-lightbox="galeria" data-title="Marketing-digital"><img src="imagens/marketing-digital-mini.jpg" alt=""></a>
+
+            <a href="imagens/consultoria-treinamento.jpg" data-lightbox="galeria" data-title="Consultoria treinamento"><img src="imagens/consultoria-treinamento-mini.jpg" alt=""></a>
         </figure>
        </article>
     </main>
@@ -49,7 +54,12 @@
         <p>Simplicity é um site fictício desenvolvido educacionalmente <br>
         Senac Penha - 2023</p>
     </footer>
+    <!-- Biblioteca jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Lightbox -->
+    <script src="lightbox/js/lightbox.min.js"></script>
 
     <script src="js/menu.js"></script>
+    <script src="js/galeria.js"></script>
 </body>
 </html>
